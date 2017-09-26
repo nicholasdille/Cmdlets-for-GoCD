@@ -27,7 +27,7 @@
     }
 
     process {
-        if ($Force -or $PSCmdlet.ShouldProcess("ShouldProcess?")) {
+        if ($Force -or $PSCmdlet.ShouldProcess("Update credentials to user server '$Server' and user '$User'?")) {
             $script:GocdServer = $Server
             $script:GocdUser   = $User
             $script:GocdToken  = $Token
