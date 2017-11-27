@@ -23,6 +23,11 @@ function Invoke-GocdApi {
         [ValidateNotNullOrEmpty()]
         [string]
         $Accept = 'application/json'
+        ,
+        [Parameter()]
+        [ValidateNotNullOrEmpty()]
+        [string]
+        $Body
     )
 
     if ($Headers.ContainsKey('Accept')) {
@@ -33,5 +38,15 @@ function Invoke-GocdApi {
     }
 
     $Gocd = Get-GocdServer
-    Invoke-AuthenticatedWebRequest -Uri "$($Gocd.Server)$Path" -Method $Method -User $Gocd.User -Token $Gocd.Token -Headers $Headers
+    $IwrParams = @{
+        Uri     = "$($Gocd.Server)$Path"
+        Method  = $Method
+        User    = $Gocd.User
+        Token   = $Gocd.Token
+        Headers = $Headers
+    }
+    if ($Body) {
+        $IwrParams.Add('Body', $Body)
+    }
+    Invoke-AuthenticatedWebRequest @IwrParams
 }
