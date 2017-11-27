@@ -1,8 +1,9 @@
-# 0.1.13
+# 0.1.14
 
 - Fixed due to upstream changes
 - Added encryption for secure variables
 - Added body for API calls
+- Fixed messages from script analyzer
 
 # 0.1.12
 
