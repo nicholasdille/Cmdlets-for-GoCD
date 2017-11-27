@@ -1,3 +1,7 @@
+# 0.1.12
+
+- Removed deprecated dependency
+
 # 0.1.11
 
 - Updated build tools
