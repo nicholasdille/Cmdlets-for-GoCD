@@ -1,3 +1,9 @@
+# 0.1.13
+
+- Fixed due to upstream changes
+- Added encryption for secure variables
+- Added body for API calls
+
 # 0.1.12
 
 - Removed deprecated dependency
