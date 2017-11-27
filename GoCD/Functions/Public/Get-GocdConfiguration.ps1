@@ -1,6 +1,4 @@
-﻿#requires -Module Helper
-
-function Get-GocdConfiguration {
+﻿function Get-GocdConfiguration {
     [CmdletBinding()]
     param(
         [Parameter()]
