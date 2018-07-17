@@ -32,21 +32,22 @@ function Invoke-GocdApi {
 
     if ($Headers.ContainsKey('Accept')) {
         $Headers.Accept = $Accept
-    
+
     } else {
         $Headers.Add('Accept', $Accept)
     }
 
     $Gocd = Get-GocdServer
+    $AuthString = Get-BasicAuthentication -User $Gocd.User -Token $Gocd.Token
+    $Headers.Add('Authorization', "Basic $AuthString")
+
     $IwrParams = @{
         Uri     = "$($Gocd.Server)$Path"
         Method  = $Method
-        User    = $Gocd.User
-        Token   = $Gocd.Token
         Headers = $Headers
     }
     if ($Body) {
         $IwrParams.Add('Body', $Body)
     }
-    Invoke-AuthenticatedWebRequest @IwrParams
+    Invoke-WebRequest @IwrParams
 }
