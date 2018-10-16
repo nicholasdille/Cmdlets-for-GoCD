@@ -1,6 +1,6 @@
 # Release Notes
 
-## 0.2.0.19
+## 0.2.0.20
 
 - Removed dependency on WebRequest
 
