@@ -13,7 +13,7 @@
 
     $Response = Invoke-GocdApi -Path '/api/agents' -Accept 'application/vnd.go.cd.v4+json'
     $ContentBytes = $Response | Select-Object -ExpandProperty Content
-    $Agents = ConvertFrom-Bytes -Data $ContentBytes -Encoding ASCII | ConvertFrom-Json
+    $Agents = ConvertFrom-ByteArray -Data $ContentBytes -Encoding ASCII | ConvertFrom-Json
 
     $Agents = $Agents._embedded.agents | Where-Object { $_.agent_state -like $State }
 

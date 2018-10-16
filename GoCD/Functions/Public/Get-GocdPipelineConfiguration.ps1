@@ -13,7 +13,7 @@
 
     $Response = Invoke-GocdApi -Path "/api/admin/pipelines/$Pipeline" -Accept 'application/vnd.go.cd.v4+json'
     $ContentBytes = $Response | Select-Object -ExpandProperty Content
-    $Content = ConvertFrom-Bytes -Data $ContentBytes -Encoding ASCII
+    $Content = ConvertFrom-ByteArray -Data $ContentBytes -Encoding ASCII
 
     if ($Raw) {
         $Content
