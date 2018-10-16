@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.2.0.19
+
+- Removed dependency on WebRequest
+
 ## 0.1.14.17
 
 - Added required modules
