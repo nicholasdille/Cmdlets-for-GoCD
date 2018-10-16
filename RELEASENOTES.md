@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.2.1.21
+
+- Migrated to renamed cmdlet
+
 ## 0.2.0.20
 
 - Removed dependency on WebRequest
