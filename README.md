@@ -4,4 +4,6 @@
 
 # Introduction
 
+*This repository is archived because I do not feel able to maintain this PowerShell module.*
+
 Cmdlets for GoCD
